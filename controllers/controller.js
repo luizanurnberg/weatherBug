@@ -28,8 +28,7 @@ exports.searchWeather = (req, res) => {
             const { name: location } = response.data
             const { description: weatherDescription } = response.data
             res.render('index', {
-                weather: `It is currently ${parseInt(temperature)} degrees in ${location}. 
-                Characterizing a ${weatherDescription} weather today`
+                weather: `It's currently ${parseInt(temperature)} degrees in ${location}.`
             })
         }).catch((error) => {
             res.render('404')
