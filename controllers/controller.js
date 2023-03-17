@@ -1,7 +1,8 @@
-const axios = require('axios')
+const axios = require('axios') /* Transform the request and response data */
 const Weather = require('../model/Weather')
-const API_KEY = 'YOUR API KEY'
+const API_KEY = 'YOUR API KEY' /* to get your API, go to 'http://api.openweathermap' */
 
+/* Will render the home page depending in which route the user take*/
 exports.renderHomePage = (req, res) => {
     res.render('index')
 }
@@ -9,7 +10,8 @@ exports.renderHomePage = (req, res) => {
 /*Main function for the application
     - First it sees if something was typed by the user
     - If so, then it makes a request to 'openweathermap' getting the information based on the wanted city and API_KEY used in this case
-    - After that, .then and .catch are used to manipulate the information. If the request returns 'Request failed with status code 404' the page '404.hbs' will appear 
+    - After that, .then and .catch are used to manipulate the information. If the request returns 'Request failed with status code 404' 
+    the page '404.hbs' will appear 
       - If everything is okay, then the index will render and the current temperature its shown
 */
 exports.searchWeather = (req, res) => {
@@ -37,6 +39,7 @@ exports.searchWeather = (req, res) => {
     }
 }
 
+/* Will render the about page depending in which route the user take*/
 exports.renderAboutPage = (req, res) => {
     res.render("about")
 }
