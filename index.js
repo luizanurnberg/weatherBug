@@ -19,10 +19,10 @@ app.set('view engine', 'hbs')
 
 app.use('/', router)
 
+/* If the user tries to access a nonexistent route, '404.hbs' is shown*/
 app.use(function (req, res, next) {
     res.status(404).render('404') 
 })
-
 
 app.listen(3000, () => {
     console.log('Server working!')
