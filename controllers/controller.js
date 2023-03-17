@@ -28,7 +28,6 @@ exports.searchWeather = (req, res) => {
         axios.get(url).then((response) => {
             const { temp: temperature } = response.data.main
             const { name: location } = response.data
-            const { description: weatherDescription } = response.data
             res.render('index', {
                 weather: `It's currently ${parseInt(temperature)} degrees in ${location}.`
             })
